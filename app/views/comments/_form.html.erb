@@ -1,0 +1,18 @@
+<div class="well well-lg">
+  <div class="panel panel-primary">
+    <div class="panel-heading">
+      Comment on this story
+    </div>
+    <%= form_for([@story, @story.comments.build]) do |f| %>
+    <table class="table">
+      <tr>
+        <th class="active">Comments</th>
+      </tr>
+      <tr>
+        <td><%= f.text_area :body, class: "form-control", placeholder: "Enter Your Comment Here" %></td>
+      </tr>
+    </table>
+  </div>
+  <%= f.submit class: "btn btn-primary btn-lg" %>
+  <% end %>
+</div>

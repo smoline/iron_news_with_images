@@ -1,0 +1,35 @@
+<div class="page-header">
+  <%= link_to stories_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to edit_story_path(@story), class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-pencil"></span>
+    Edit
+  <% end %>
+  <h1>Story Details</h1>
+</div>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+		<%= @story.title %>
+	</div>
+	<table class="table">
+		<tr>
+			<th class="active">Link</th>
+			<th class="active">Contributor</th>
+		</tr>
+		<tr>
+			<td><%= @story.url %></td>
+			<td><%= @story.created_by.email %></td>
+		</tr>
+  </table>
+</div>
+<div class="panel panel-primary">
+	<div class="panel-heading">
+    Comments
+  </div>
+  <%= render @story.comments %>
+</div>
+<% if logged_in? %>
+  <%= render 'comments/form' %>
+<% end %>

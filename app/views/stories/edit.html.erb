@@ -1,0 +1,26 @@
+<div class="page-header">
+  <%= link_to stories_path, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-list-alt"></span>
+    Back
+  <% end %>
+  <%= link_to @story, class: 'btn btn-primary' do %>
+    <span class="glyphicon glyphicon-info-sign"></span>
+    Details
+  <% end %>
+  <h1>Edit Story</h1>
+</div>
+
+<%= render 'form' %>
+
+<div class="container-fluid">
+  <div class="row">
+    <div class="col-sm-11 col-sm-offset-10">
+      <button class="btn btn-default" type="submit">
+      <%= link_to @story, method: :delete, data: { confirm: 'Are you sure?' } do %>
+        <span class="glyphicon glyphicon-remove"></span>
+        Delete Story
+      <% end %>
+      </button>
+    </div>
+  </div>
+</div>
