@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170411214248) do
+ActiveRecord::Schema.define(version: 20170412171918) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -24,12 +24,18 @@ ActiveRecord::Schema.define(version: 20170411214248) do
     t.index ["story_id"], name: "index_comments_on_story_id", using: :btree
   end
 
+  create_table "files", force: :cascade do |t|
+    t.binary "content"
+    t.text   "metadata"
+  end
+
   create_table "stories", force: :cascade do |t|
     t.string   "title"
     t.string   "url"
     t.datetime "created_at",    null: false
     t.datetime "updated_at",    null: false
     t.integer  "created_by_id"
+    t.text     "image_data"
   end
 
   create_table "users", force: :cascade do |t|
