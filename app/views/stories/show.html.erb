@@ -22,7 +22,7 @@
 
   <dt>Image:</dt>
   <% if @story.image.present? %>
-    <dd><%= image_tag(@story.image_url(:small)) %></dd>
+    <dd><%= image_tag(@story.image_url(:medium)) %></dd>
   <%else %>
     <dd><%= image_tag("Ruby.png", :width => 64, :height => 64) %></dd>
   <% end %>

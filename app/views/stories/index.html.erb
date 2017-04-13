@@ -8,7 +8,7 @@
     <div class="col-md-1"><%= index + 1 %></div>
     <% if story.image.present? %>
       <div class="col-md-1">
-        <img class="media-object" src="<%= story.image_url(:thumbnail) %>" height="64">
+        <img class="media-object" src="<%= story.image_url(:thumbnail) %>" width="64", height="64">
       </div>
     <%else %>
       <div class="col-md-1">
