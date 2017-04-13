@@ -9,21 +9,25 @@
   <% end %>
   <h1>Story Details</h1>
 </div>
-<div class="panel panel-primary">
-	<div class="panel-heading">
-		<%= @story.title %>
-	</div>
-	<table class="table">
-		<tr>
-			<th class="active">Link</th>
-			<th class="active">Contributor</th>
-		</tr>
-		<tr>
-			<td><%= @story.url %></td>
-			<td><%= @story.created_by.email %></td>
-		</tr>
-  </table>
-</div>
+
+<dl class="dl-horizontal">
+  <dt>Title:</dt>
+  <dd><%= @story.title %></dd>
+
+  <dt>Url:</dt>
+  <dd><%= @story.url %></dd>
+
+  <dt>Contributor:</dt>
+  <dd><%= @story.created_by.email %></dd>
+
+  <dt>Image:</dt>
+  <% if @story.image.present? %>
+    <dd><%= image_tag(@story.image_url(:small)) %></dd>
+  <%else %>
+    <dd><%= image_tag("Ruby.png", :width => 64, :height => 64) %></dd>
+  <% end %>
+</dl>
+
 <div class="panel panel-primary">
 	<div class="panel-heading">
     Comments

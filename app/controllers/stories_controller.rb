@@ -73,6 +73,6 @@ class StoriesController < ApplicationController
 
     # Only allow a trusted parameter "white list" through.
   def story_params
-    params.require(:story).permit(:title, :url)
+    params.require(:story).permit(:title, :url, :image)
   end
 end
