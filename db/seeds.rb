@@ -8,7 +8,7 @@
 require 'open-uri'
 require 'nokogiri'
 
-Nokogiri::HTML(open('https://news.ycombinator.com/news?p=1')).css(".storylink").each { |link| Story.create(title: link.content, url: link.values.first, created_by_id: 1 }
+Nokogiri::HTML(open('https://news.ycombinator.com/news?p=1')).css(".storylink").each { |link| Story.create(title: link.content, url: link.values.first, created_by_id: 1 )}
 
 # https://news.ycombinator.com
 # https://news.ycombinator.com/news?p=2
