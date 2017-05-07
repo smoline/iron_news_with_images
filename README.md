@@ -1,24 +1,7 @@
-# README
+# Iron News with Authentication and Images
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Added processing of multiple versions of the image to use in the various places in the app
 
-Things you may want to cover:
+![Iron News with Pics](docs/IronNewsPics.png)
 
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+![Iron News](docs/IronNewsApp.png)
